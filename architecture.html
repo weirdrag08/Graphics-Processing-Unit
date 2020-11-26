@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1, shrink-to-fit = no" />
+    <meta http-equiv="x-ua-compatible" content="ie = edge" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css"
+        integrity="sha512-f8mUMCRNrJxPBDzPJx3n+Y5TC5xp6SmStstEfgsDXZJTcxBakoB5hvPLhAfJKa9rCvH+n3xpJ2vQByxLk4WP2g=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/architecture.css" />
+    <title>Graphics Processing Unit: Architecture</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src= "images/logo.svg" alt="logo" class="img-fluid" width="60px"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><img src="images/processor.svg" width="40px" class="img-fluid"> Overview</a></li> &nbsp; &nbsp;
+                    <li class="nav-item"><a class="nav-link" href="insights.html"><img src="images/info.svg" width="35px" class="img-fluid"> Insights</a></li> &nbsp; &nbsp;
+                    <li class="nav-item"><a class="nav-link active" href="#"><img src="images/sketch.svg" width="38px" class="img-fluid"> Architecture</a></li> &nbsp; &nbsp;
+                    <li class="nav-item"><a class="nav-link" href="applications.html"><img src="images/jigsaw.svg" width="40px" class="img-fluid"> Applications</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-md-6">
+                    <h1>Graphics Processing Unit! <small><em>Architecture</em></small></h1>
+                </div>
+                <div class = "col-12 offset-md-1 col-md-5">
+                    <p style = "font-size: 1.1em"><em><span style = "font-size: 200%">W</span>hatever good things we build end up building us!</em></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class = "row justify-content-center">
+            <div class = "col-auto">
+                <h1 style = "margin: 20px 0px"><i class = "fa fa-cube"></i> Block Diagram</h1>
+            </div>
+        </div>
+        <div class = "row align-items-center">
+            <div class = "col-12 block_diagram_img">
+                <img class = "img-fluid img-thumbnail" src = "images/block_diagram.jpeg" alt = "Block diagram" width = "50%">
+            </div>
+            <div class="col-12">
+                <p class = "d-none d-sm-block">A GPU is tailored for highly parallel operation. For this reason, GPUs have many parallel execution units and higher
+                    transistor counts. The CPU and GPU inside the PC work in parallel with each other
+                    There are two “threads” going on, one for the CPU and one for the GPU, which communicate through a command
+                    buffer. The GPU receives geometry information from the CPU as an input and provides a picture as an output. GPUs have much deeper pipelines which we will see in detail ahead.</p>
+            </div>
+        </div>
+
+ <!-- ? TODO -->
+                <!-- <div class="col-12 col-sm col-md">
+                    <div class="media">
+                        <img src="structure.jpeg" width="30%" alt="Chipset" class="d-flex mr-4 img-fluid img-thumbnail align-self-end">
+                        <div class="media-body">
+                            <p class="d-none d-sm-block">
+                                A single GPU device consists of multiple Processor Clusters (PC) that contain multiple Streaming Multiprocessors (SM).
+                                Each SM accommodates a layer-1 instruction cache layer with its associated cores. Its architecture is tolerant of
+                                memory latency. A GPU works with fewer, and relatively small, memory cache layers. Reason being is that a GPU has more
+                                transistors dedicated to computation meaning it cares less how long it takes the retrieve data from memory.
+                            </p>
+                        </div>
+                    </div>
+                </div> -->
+        <div class = "row">
+            <div class = "col-12">
+                <h2 style = "margin: 20px 0px"> <i class = "fa fa-cube"></i> Pipelining</h2>
+            </div>
+        </div>
+        <div class = "row align-items-center">
+            <div class = "col-12 col-sm-6">
+                <img class = "img-fluid img-thumbnail" src ="images/pipeline_entities.jpeg" alt = "Pipeline entities" width = "100%">
+            </div>
+            <div class = "col-12 col-sm-6">
+                <img class = "img-fluid img-thumbnail" src = "images/graphics_pipeline.jpeg" alt = "Graphics pipline" width = "100%">
+            </div>
+        </div>
+
+        <div class="row align-items-center row-content">
+            <div class="col-12">
+                <div class="media">
+                    <img src = "images/vertex_processing.jpeg" width = "30%" alt = "Vertex Processing"
+                        class="d-flex mr-4 img-fluid img-thumbnail align-self-center">
+                    <div class="media-body">
+                    <h3 class="mt-0"><img class="img-fluid" src="images/one.svg" width="45px" alt="Number one"> Vertex Processing</h3>
+                        <p style = "margin-left: 54px" class="d-none d-md-block">
+                        The input primitives are formed from individual vertices. Each vertex must be transformed into screen space and shaded,
+                        typically through computing their interaction with the lights in the scene. Because typical scenes have tens to hundreds
+                        of thousands of vertices, and each vertex can be computed independently, this stage is well suited for parallel
+                        hardware.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center row-content">
+            <div class="col-12">
+                <div class="media">
+                    <img src="images/primitive_processing.jpeg" width="30%" alt="Primitive processing"
+                        class="d-flex mr-4 img-fluid img-thumbnail align-self-center">
+                    <div class="media-body">
+                        <h3 class="mt-0"><img class="img-fluid" src="images/two.svg" width="45px" alt="Number two"> Primitive Processing</h3>
+                        <p style = "margin-left: 54px" class="d-none d-md-block">
+                            The vertices are assembled into triangles, the fundamental hardware-supported primitive in today’s GPUs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center row-content">
+            <div class="col-12">
+                <div class="media">
+                    <img src="images/rasterization.jpeg" width="30%" alt = "Rasterization"
+                        class="d-flex mr-4 img-fluid img-thumbnail align-self-center">
+                    <div class="media-body">
+                        <h3 class="mt-0"> <img class="img-fluid" src="images/three.svg" width="45px" alt="Number three"> Rasterization</h3>
+                        <p style = "margin-left: 54px" class="d-none d-md-block">
+                            Rasterization is the process of determining which screen-space pixel locations are covered by each triangle. Each
+                            triangle generates a primitive called a fragment at each screen-space pixel location that it covers. Because many
+                            triangles may overlap at any pixel location, each pixel’s color value may be computed from several fragments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center row-content">
+            <div class="col-12">
+                <div class="media">
+                    <img src = "images/fragment_processing.jpeg" width = "30%" alt = "Fragment Processing"
+                        class="d-flex mr-4 img-fluid img-thumbnail align-self-center">
+                    <div class="media-body">
+                        <h3 class="mt-0"><img class="img-fluid" src="images/four.svg" width="45px" alt="Number four"> Fragment Processing</h3>
+                        <p style = "margin-left: 54px" class="d-none d-md-block">
+                            Using color information from the vertices and possibly fetching additional data from global memory in the form of
+                            textures (images that are mapped onto surfaces), each fragment is shaded to determine its final color. Just as in the
+                            vertex stage, each fragment can be computed in parallel. This stage is typically the most computationally demanding
+                            stage in the graphics pipeline.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center row-content">
+            <div class="col-12">
+                <div class="media">
+                    <img src="images/pixel_operations.jpeg" width = "30%" alt = "Pixel Operations"
+                        class="d-flex mr-4 img-fluid img-thumbnail align-self-center">
+                    <div class="media-body">
+                        <h3 class="mt-0"><img class="img-fluid" src="images/five.svg" width="45px" alt="Number five"> Pixel Operations</h3>
+                        <p style = "margin-left: 54px" class="d-none d-md-block">
+                            Fragments are assembled into a final image with one color per pixel, usually by keeping the closest fragment to the
+                            camera for each pixel location.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-sm-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="insights.html">Insights</a></li>
+                        <li><a href="#">Architecture</a></li>
+                        <li><a href="applications.html">Applications</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 offset-2 col-sm-3 align-self-center">
+                    <a href="insights.html"><img class="img-fluid" src="images/back.svg" alt="back" width="70px"></a>
+                    <a href="applications.html"><img class="img-fluid" src="images/next.svg" alt="next" width="70px"></a>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i
+                                class="fa fa-google-plus fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+                                class="fa fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i
+                                class="fa fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i
+                                class="fa fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i
+                                class="fa fa-youtube fa-lg"></i></a>
+                        <a href="mailto:anand.aditya0803@gmail.com"><img class = "img-fluid" src = "images/email.svg" alt = "Email" width = "36px"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>© Copyright 2020 Aditya Anand</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

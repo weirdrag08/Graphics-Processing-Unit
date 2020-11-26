@@ -1,0 +1,47 @@
+.row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+.row-content{
+    margin: 0px auto;
+    padding: 50px 0px;
+    min-height: 400px;
+    margin-bottom: 100px;
+}
+
+.footer{
+    background: #D1C4E9;
+    margin: 0px auto;
+    padding: 20px 0px;
+    color: #000000;
+}
+
+.jumbotron{
+    /* OPTION 1 for background---> url("https://media.giphy.com/media/l4JyZXeJBh5yr1DGg/giphy.gif")*/
+    margin: 0px auto;
+    padding: 50px 30px; 
+    background:  #9575CD;
+    color: #FFFFFF;
+}
+
+.address{
+    font-size: 80%;
+    margin: 0px;
+    color: #0F0F0F;
+}
+
+body{
+    padding: 65px 0px 0px 0px;
+    z-index: 0;
+    color: #FFFFFF;
+    background: #000000;
+}
+
+.navbar-dark{
+    background-color: #512DA8;
+}
+
+p{
+    font-size: 1.1em;
+}
